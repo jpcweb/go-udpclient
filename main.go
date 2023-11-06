@@ -76,7 +76,6 @@ func readConnection(conn *net.UDPConn, in chan<- string) {
 			close(in)
 			return
 		}
-		// Apply incoming middleware to the message before sending it to the channel
 		modifiedMessage := string(buffer[:n])
 		in <- modifiedMessage
 	}
